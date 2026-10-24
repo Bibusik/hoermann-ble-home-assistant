@@ -1,0 +1,20 @@
+# Build artifacts
+esp32/.pio/
+esp32/.vscode/
+
+# Generated at build time from local-only secret files - NEVER commit:
+# contains the gate's RSA public key (fine) but is regenerated from files
+# that also hold WiFi/MQTT credentials, so keep the whole generated header out.
+esp32/include/secrets_generated.h
+
+# Local-only secrets (QR code text, WiFi/MQTT credentials, our registered key)
+secret/
+
+# BLE captures (not needed for reproducing the build; can contain nearby
+# unrelated devices' advertising data)
+captures/
+*.pcap
+
+# Python
+__pycache__/
+*.pyc
